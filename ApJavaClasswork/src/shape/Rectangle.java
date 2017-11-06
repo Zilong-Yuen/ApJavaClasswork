@@ -1,6 +1,6 @@
 package shape;
 
-import Shape.Shape;
+import shape.Shape;
 
 public class Rectangle implements Shape
 {
