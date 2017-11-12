@@ -23,11 +23,11 @@ public class ArrayMethods {
 		int[] noDupes = new int[list.length-dupes];
 		for (int i = 0; i < list.length-1; i++)
 		{
-			for (int t = i+1; t < list.length; t++)
+			for (int t = i+1; t < noDupes.length; t++)
 			{
 				if (list[i] != list[t])
 				{
-					noDupes[t] = list[i];
+					noDupes[i] = list[i];
 				}
 			}
 		}
@@ -64,7 +64,7 @@ public class ArrayMethods {
 	
 	public static String toString(int[] list)
 	{
-		String temp = "";
+		String temp = " ";
 		for (int i = 0; i < list.length; i++)
 		{
 			temp += list[i] + ", ";
