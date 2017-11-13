@@ -98,7 +98,7 @@ public class ArrayMethods {
 		{
 			for(int j = 0; j < pascal.length[j]; j++)
 			{
-				
+				helo im tim
 			}
 		}
 	}
