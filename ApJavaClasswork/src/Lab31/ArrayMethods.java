@@ -71,14 +71,36 @@ public class ArrayMethods {
 		return result;
 	}
 	
-	//public static int[][]  pascalTriangle(int n)
+	public static int[][]  pascalTriangle(int n)
 	{
-		
+		int[][] pascal = new int[n][]; 
+		for (int i = 0; i < pascal.length; i++)
+		{
+			pascal[i] = new int [i + 1];
+			for (int t = 0; t < pascal[i].length;t++)
+			{
+				if(t == 0 || t == pascal[i].length - 1)
+				{
+					pascal[i][t] = 1;
+				}
+				else
+				{
+					pascal[i][t] = pascal[i - 1][t - 1] + pascal[i -1][t];
+				}
+			}
+		}
+		return pascal;
 	}
 	
-	//public static void printPascalTriangle(int[][] triangle)
+	public static void printPascalTriangle(int[][] triangle)
 	{
-		
+		for(int i = 0; i < pascal.length[i]; i++)
+		{
+			for(int j = 0; j < pascal.length[j]; j++)
+			{
+				
+			}
+		}
 	}
 	
 	public static String toString(int[] list)
