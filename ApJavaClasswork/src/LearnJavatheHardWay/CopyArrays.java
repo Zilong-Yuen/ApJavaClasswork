@@ -1,4 +1,4 @@
-package CopyArrays;
+package LearnJavatheHardWay;
 
 public class CopyArrays {
 	
