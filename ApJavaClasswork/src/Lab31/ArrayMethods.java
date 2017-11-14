@@ -19,7 +19,9 @@ public class ArrayMethods {
 			}
 			System.out.println();
 		}
-		
+			
+		System.out.println();
+		printPascalTriangle(pascalTriangle(7));
 	}
 	
 	public static int[] removeDuplicates(int[] list)
@@ -94,12 +96,13 @@ public class ArrayMethods {
 	
 	public static void printPascalTriangle(int[][] triangle)
 	{
-		for(int i = 0; i < pascal.length[i]; i++)
+		for (int i = 0; i < triangle.length; i++)
 		{
-			for(int j = 0; j < pascal.length[j]; j++)
+			for (int t = 0; t < triangle[i].length; t++)
 			{
-				helo im tim
+				System.out.print("[ " + triangle[i][t] + " ]");
 			}
+			System.out.println();
 		}
 	}
 	
