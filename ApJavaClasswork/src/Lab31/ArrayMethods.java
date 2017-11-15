@@ -1,5 +1,10 @@
 package Lab31;
-
+/**
+ * 
+ * @author Tim Zhen and Zilong Yuen
+ * @since 11/15/2017
+ *
+ */
 public class ArrayMethods {
 	public static void main(String[] args)
 	{
@@ -21,8 +26,17 @@ public class ArrayMethods {
 		}
 			
 		System.out.println();
-		printPascalTriangle(pascalTriangle(2));
+		printPascalTriangle(pascalTriangle(5));
 	}
+	
+	/**
+	 * compares all integers to each other to check for the number of duplicates and replaces the duplicates with the object in position 0. 
+	 * creates a new array that has a length of the original array but without duplicates.
+	 * then it loops through the old array to check for duplicates and if there is the first object value anywhere else in the array except for the first position, then it ignores it
+	 * it pushes the other values that are unique
+	 * @param list the array that the user is removing duplicates from
+	 * @return a new array without duplicates
+	 */
 	
 	public static int[] removeDuplicates(int[] list)
 	{
@@ -72,7 +86,11 @@ public class ArrayMethods {
 		}
 		return result;
 	}
-	
+	/**
+	 * creates a 2-d jagged array of pascal's triangle
+	 * @param n number of rows
+	 * @return 2d jagged int array
+	 */
 	public static int[][] pascalTriangle(int n)
 	{
 		int[][] pascal = new int[n][]; 
@@ -96,19 +114,16 @@ public class ArrayMethods {
 	
 	public static void printPascalTriangle(int[][] triangle)
 	{
-		for (int z = 0; z < triangle.length; z++)
-		{
-			System.out.print(" ");
-		}
 		for (int i = 0; i < triangle.length; i++)
 		{
-			for (int x = 0; x < triangle.length-1; x++)
+			int spaces = triangle.length-i;
+			for (int z = spaces; z > 0; z--)
 			{
 				System.out.print(" ");
 			}
 			for (int t = 0; t < triangle[i].length; t++)
 			{
-				System.out.print("[ " + triangle[i][t] + " ]");
+				System.out.print(triangle[i][t] + " ");
 			}
 			System.out.println();
 		}
