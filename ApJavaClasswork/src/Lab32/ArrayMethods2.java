@@ -18,19 +18,26 @@ public class ArrayMethods2 {
 		int z = 0;
 		int firstList = 0;
 		int secList = 0;
-		while(z < merged.length)
+		while(firstList < list1.length && secList < list2.length)
 		{
-			if (list1.length > firstList)
+			if (list1[firstList].compareTo(list2[secList]) == 0)
+			{
+				merged[z] = list1[firstList];
+				firstList++;
+				secList++;
+				z++;
+			}
+			else if (list1[firstList].compareTo(list2[secList]) < 0)
 			{
 				merged[z] = list1[firstList];
 				firstList++;
 				z++;
 			}
-			if (list2.length > secList)
+			else if (list2[secList].compareTo(list1[firstList]) < 0)
 			{
 				merged[z] = list2[secList];
 				secList++;
-				z++;
+				z++; 
 			}
 		}
 		return merged;
