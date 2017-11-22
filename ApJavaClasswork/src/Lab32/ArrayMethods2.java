@@ -1,14 +1,24 @@
 package Lab32;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArrayMethods2 {
 	public static void main(String []args)
 	{
-		String[] test1 = {"a","b","c","d","z"};
-		String[] test2 = {"w","x","y"};
+		String[] test1 = {"a","b","c","d","t"};
+		String[] test2 = {"w","x","y","z"};
 		String[] merged = merge(test1, test2);
 		for (int i = 0; i < test1.length + test2.length; i++)
 		{
 			System.out.print("[" + merged[i] + "]");
+		}
+		System.out.println(" ");
+		String[] test3 = {"orange", "tim", "apple", "coconut", "pineapple", "banana"};
+		String[] mergeSortTest = mergeSort(test3);
+		for (int i = 0; i < mergeSortTest.length; i++)
+		{
+			System.out.print("[" + mergeSortTest[i] + "]");
 		}
 	}
 	
@@ -40,12 +50,41 @@ public class ArrayMethods2 {
 				z++; 
 			}
 		}
+		
+		if (firstList >= list1.length)
+		{
+			while (secList < list2.length)
+			{
+				merged[z] = list2[secList];
+				z++;
+				secList++;
+			}
+		}
+		if(secList >= list2.length)
+		{
+			while (firstList < list1.length)
+			{
+				merged[z] = list1[firstList];
+				z++;
+				firstList++;
+			}
+		}
 		return merged;
 	}
 	
-	//public static String[] mergeSort(String[] list)
+	public static String[] mergeSort(String[] list)
 	{
-		
+		if (list.length == 1)
+		{
+			return list;
+		}
+		else
+		{
+			int half = list.length/2;
+			String[] firstHalf = Arrays.copyOfRange(list, 0, half);
+			String[] secondHalf = Arrays.copyOfRange(list, half, list.length);
+			return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+		}
 	}
 	
 	//public static int partition(int[] list)
