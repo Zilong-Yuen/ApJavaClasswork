@@ -14,12 +14,15 @@ public class ArrayMethods2 {
 			System.out.print("[" + merged[i] + "]");
 		}
 		System.out.println(" ");
-		String[] test3 = {"orange", "tim", "apple", "coconut", "pineapple", "banana"};
+		String[] test3 = {"orange", "tim", "apple", "coconut", "pineapple", "banana", "maple"};
 		String[] mergeSortTest = mergeSort(test3);
 		for (int i = 0; i < mergeSortTest.length; i++)
 		{
 			System.out.print("[" + mergeSortTest[i] + "]");
 		}
+		System.out.println(" ");
+		int[] test4 = {8,5,3,7,8,2,3,9,9,5};
+		System.out.print(partition(test4));
 	}
 	
 	public static String[] merge(String[] list1, String[] list2)
@@ -87,8 +90,17 @@ public class ArrayMethods2 {
 		}
 	}
 	
-	//public static int partition(int[] list)
+	public static int partition(int[] list)
 	{
-		
+		int pivot = list[0];
+		int counter = 0;
+		for(int i = 1; i < list.length; i++)
+		{
+			if(list[i] <= pivot)
+			{
+				counter++;
+			}
+		}
+		return counter;
 	}
 }
