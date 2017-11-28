@@ -9,6 +9,13 @@ public class ArrayMethods3 {
 		{
 			System.out.print("[" + test1[i] + "]");
 		}
+		System.out.println(" ");
+		double[] test2 = {5,2,3,1,7,2,9,10};
+		selectionSort(test2);
+		for (int i = 0; i < test2.length; i++)
+		{
+			System.out.print("[" + test2[i] + "]");
+		}
 	}
 	public static void insertionSort(int[] list1)
 	{
@@ -16,7 +23,20 @@ public class ArrayMethods3 {
 	}
 	public static void selectionSort(double[] list1)
 	{
-		
+		int compare = 0;
+		for (int i = 0; i < list1.length-1; i++)
+		{
+			for (int j = i+1; j < list1.length; j++)
+			{
+				if (list1[i] > list1[j])
+				{
+					compare = j;
+				}
+			}
+			double temp = list1[compare];
+			list1[compare] = list1[i];
+			list1[i] = temp;
+		}
 	}
 	public static void bubbleSort(String[] list1)
 	{
