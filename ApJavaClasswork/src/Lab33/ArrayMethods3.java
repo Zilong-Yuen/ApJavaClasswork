@@ -3,24 +3,25 @@ package Lab33;
 public class ArrayMethods3 {
 	public static void main(String[] args)
 	{
-		System.out.print("Bubble Sort:\n");
-		String[] test1 = {"a","b","d","t","c","z","b","q"};
-		bubbleSort(test1);
+		System.out.print("Selection Sort:\n");
+		double[] test1 = {5,3,1,7,2,9,10,2,6,7};
+		selectionSort(test1);
 		for (int i = 0; i < test1.length; i++)
 		{
 			System.out.print("[" + test1[i] + "]");
 		}
-		System.out.println("\nSelection Sort:");
-		double[] test2 = {5,3,1,7,2,9,10,2,6,7};
 		
-		selectionSort(test2);
+		System.out.println("\nInsertion Sort: ");
+		int[] test2 = {5,3,1,7,2,9,10,2,6,7};
+		insertionSort(test2);
 		for (int i = 0; i < test2.length; i++)
 		{
 			System.out.print("[" + test2[i] + "]");
 		}
-		int[] test3 = {5,3,1,7,2,9,10,2,6,7};
-		System.out.println("\nInsertion Sort: ");
-		insertionSort(test3);
+		
+		System.out.println("\nBubble Sort:");
+		String[] test3 = {"a","b","d","t","c","z","b","q"};
+		bubbleSort(test3);
 		for (int i = 0; i < test3.length; i++)
 		{
 			System.out.print("[" + test3[i] + "]");
