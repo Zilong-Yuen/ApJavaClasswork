@@ -16,10 +16,29 @@ public class ArrayMethods3 {
 		{
 			System.out.print("[" + test2[i] + "]");
 		}
+		int[] test3 = {5,3,1,7,2,9,10,2,6,7};
+		System.out.println();
+		insertionSort(test3);
+		for (int i = 0; i < test3.length; i++)
+		{
+			System.out.print("[" + test3[i] + "]");
+		}
 	}
 	public static void insertionSort(int[] list1)
 	{
-		
+		int z = 0;
+		for (int i = 0; i <= list1.length; i++)
+		{
+			for (int j = z - 1; j >= 0; j--)
+			{
+				if (list1[j] >= list1[z])
+				{
+					swap(list1,j,z);
+					z--;
+				}
+			}
+			z = i;
+		}
 	}
 	public static void selectionSort(double[] list1)
 	{
@@ -27,15 +46,9 @@ public class ArrayMethods3 {
 		{
 			for (int j = i+1; j < list1.length; j++)
 			{
-				double compare = list1[i+1];
-				if (list1[i] > compare)
+				if (list1[i] > list1[j])
 				{
-					/*double temp = list1[j];
-					list1[j] = list1[i];
-					list1[i] = temp;
-					*/
-					
-					
+					swap(list1,i,j);
 				}
 			}
 		}
@@ -60,5 +73,19 @@ public class ArrayMethods3 {
 				}
 			}
 		}
+	}
+	
+	public static void swap(double[] arr, int a, int b)
+	{
+		double temp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = temp;
+	}
+	
+	public static void swap(int[] arr, int a, int b)
+	{
+		int temp = arr[a];
+		arr[a] = arr[b];
+		arr[b] = temp;
 	}
 }
