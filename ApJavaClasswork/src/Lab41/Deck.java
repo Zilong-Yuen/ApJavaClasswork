@@ -52,7 +52,7 @@ public class Deck {
 	{
 		for(int i = this.size()-1; i >= 0; i--)
 		{
-			int r = (int) (Math.random()*i-1);
+			int r = (int) (Math.random()*i+1);
 			swap(this.undealt,i,r);
 		}
 	}

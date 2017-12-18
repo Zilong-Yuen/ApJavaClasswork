@@ -3,7 +3,7 @@ package Lab41;
 public class Card {
 	String rank;
 	String suit;
-	int pointValue;
+	private int pointValue;
 	
 	public Card(String rank, String suit, int pointValue)
 	{
