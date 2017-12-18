@@ -37,15 +37,15 @@ public class Deck {
 	
 	public Card deal()
 	{
-		if(undealt.size() == 0)
+		if (undealt.size() == 0)
 		{
-			return null;
+		return null;
 		}
 		else
 		{
-			this.dealt.add(this.undealt.get(this.size()-1));
+		this.dealt.add(this.undealt.get(this.size()-1));
 		}
-		this.undealt.remove(this.size()-1);
+		return this.undealt.remove(this.size()-1);
 	}
 	
 	public void shuffle()

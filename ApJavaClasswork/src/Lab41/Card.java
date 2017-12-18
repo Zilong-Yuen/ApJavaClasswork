@@ -12,19 +12,19 @@ public class Card {
 		this.pointValue = pointValue;
 	}
 	
-	public void getRank(String rank)
+	public String getRank(String rank)
 	{
-		this.rank = rank;
+		return this.rank = rank;
 	}
 
-	public void getSuit(String suit)
+	public String getSuit(String suit)
 	{
-		this.suit = suit;
+		return this.suit = suit;
 	}
 
-	public void getPointValue(int pointValue) 
+	public int getPointValue(int pointValue) 
 	{
-		this.pointValue = pointValue;
+		return this.pointValue = pointValue;
 	}
 	
 	public boolean equals(Card otherCard)
@@ -34,5 +34,10 @@ public class Card {
 			return true;
 		}
 		return false;
+	}
+
+	public String toString()
+	{
+		return ("Rank: " + rank + " |" + " Suit: " + suit + " |" + " PointValue: " + pointValue);
 	}
 }
