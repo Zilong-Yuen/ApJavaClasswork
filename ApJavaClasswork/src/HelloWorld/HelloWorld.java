@@ -9,7 +9,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList; 
 import java.util.List; 
 
-public class HelloWorld {
+public class HelloWorld 
+{
 	public static void main(String[] args) 
 	{ 
 		List<Book> books = readBooksFromCSV("Zilong Yuen.csv"); 
@@ -17,11 +18,10 @@ public class HelloWorld {
 		{ 
 			System.out.println(b); 
 		}
-
 	}
 
 	private static List<Book> readBooksFromCSV(String fileName) 
-	{ 
+	{
 		List<Book> books = new ArrayList<>(); 
 		Path pathToFile = Paths.get(fileName);
 		try (BufferedReader br = Files.newBufferedReader(pathToFile,StandardCharsets.US_ASCII)) 
@@ -48,5 +48,4 @@ public class HelloWorld {
 		String author = metadata[2];
 		return new Book(name, price, author);
 	}
-	
-	}
+}
