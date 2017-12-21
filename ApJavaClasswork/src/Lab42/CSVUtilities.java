@@ -1,7 +1,10 @@
 package Lab42;
 
-import java.io.BufferedReader;
+import java.io.File;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CSVUtilities {
 	ArrayList<String> CSVData = new ArrayList<String>();
@@ -10,7 +13,7 @@ public class CSVUtilities {
 	public CSVUtilities(File csv)
 	{
 		ArrayList<String> CSVData = new ArrayList<String>();
-		Path pathtofile = Paths.get("")
+		Path pathtofile = Paths.get("");
 	}
 	
 	public List<String> getColumnHeaders()
