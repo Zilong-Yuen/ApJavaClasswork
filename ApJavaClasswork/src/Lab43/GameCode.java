@@ -1,26 +1,36 @@
 package Lab43;
 
-import java.io.FileInputStream;
-
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class GameCode extends Application{
+	int counts = 0;
 	public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("HBox Experiment 1");
 
         Button button = new Button("Click me!");
-
-        Scene scene = new Scene(button, 200, 100);
+        
+        button.setOnAction(value ->  {
+        	counts++;
+            System.out.println(counts);
+         });
+        
+        timeStep = System.nanoTime() + 1000000000L;
+        
+        StackPane root = new StackPane();
+        root.getChildren().add(button);
+        Scene scene = new Scene(root, 500, 500);
         primaryStage.setScene(scene);
         primaryStage.show();
-
     }
-
+	
     public static void main(String[] args) {
         Application.launch(args);
     }
