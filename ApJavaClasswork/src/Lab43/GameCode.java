@@ -1,6 +1,7 @@
 package Lab43;
 
 import javafx.application.Application;
+import javafx.animation.AnimationTimer;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -22,13 +23,26 @@ public class GameCode extends Application{
             System.out.println(counts);
          });
         
-        timeStep = System.nanoTime() + 1000000000L;
+        long timeStep = System.nanoTime() + 1000000000L;
+        new AnimationTimer()
+        {
+
+			@Override
+			public void handle(long now) {
+				if (now > timeStep)
+				{
+					timeStep = now + 1000000000L;
+					
+				}
+			}
+        	
+        }.start();
         
         StackPane root = new StackPane();
         root.getChildren().add(button);
         Scene scene = new Scene(root, 500, 500);
         primaryStage.setScene(scene);
-        primaryStage.show();
+        primaryStage.show();		
     }
 	
     public static void main(String[] args) {
