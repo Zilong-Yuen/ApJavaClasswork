@@ -19,7 +19,6 @@ import javafx.stage.Stage;
 
 public class GameCode extends Application{
 	int counts = 0;
-	boolean gameOn = true;
 	public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("Button Clicker by Tim and Zilong");
         
@@ -38,18 +37,22 @@ public class GameCode extends Application{
             		if (now > timeStep)
             		{
             			System.out.println("You clicked " + counts + " times in 10 seconds");
-            			System.exit(1);
+            			System.exit(0);
             		}
             	}
             }.start();
          });
   
         button.setMaxSize(100, 100);
+        button.setStyle("-fx-border-color: #ff0000; -fx-background-color: #ffffff");
+        
+        
+       // text1.setText("Start clicking!");
         
         StackPane root = new StackPane();
         root.getChildren().add(button);
         root.getChildren().add(text1);
-        Scene scene = new Scene(root, 500, 500);
+        Scene scene = new Scene(root, 400, 400);
         primaryStage.setScene(scene);
         primaryStage.show();		
     }
