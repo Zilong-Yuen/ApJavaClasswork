@@ -41,11 +41,24 @@ public class GameCode extends Application{
             		}
             	}
             }.start();
+            
+            PrintWriter pw = null;
+            try 
+            {
+            	pw = new PrintWriter(new File("results.csv"));
+            }
+            catch(FileNotFoundException e)
+            {
+            	System.err.println(e);
+            }
+            StringBuilder sb = new StringBuilder();
+            sb.append("Name, High Score\n");
+            sb.append("Tim," + counts + "\n");
+            
          });
   
-        button.setMaxSize(100, 100);
-        button.setStyle("-fx-border-color: #ff0000; -fx-background-color: #ffffff");
-        
+        button.setMaxSize(150, 150);
+        button.setStyle("-fx-border-color: #ff0000; -fx-background-color: #ffffff; -fx-font-size: 2em");
         
        // text1.setText("Start clicking!");
         
@@ -59,6 +72,8 @@ public class GameCode extends Application{
 	
     public static void main(String[] args) {
         Application.launch(args);
+        
+       
     }
 
 }
