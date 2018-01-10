@@ -19,41 +19,36 @@ import javafx.stage.Stage;
 
 public class GameCode extends Application{
 	int counts = 0;
+	boolean gameOn = true;
 	public void start(Stage primaryStage) throws Exception {
-        primaryStage.setTitle("HBox Experiment 1");
+        primaryStage.setTitle("Button Clicker by Tim and Zilong");
         
         Text text1 = new Text();
         Button button = new Button("Click me!");
-        
-        //long timeStep = System.nanoTime() + 1000000000;
-        
+       
         button.setOnAction(value ->  {
-        	long timeStep = System.nanoTime() + 1000000000L;
         	counts++;
-            System.out.println(counts);
+            button.setText(" " + counts + " ");
         	
-            if (System.nanoTime() > timeStep)
+            long timeStep = System.nanoTime() + 10000000000L;
+            new AnimationTimer()
             {
-            	System.out.println("It has been 10 seconds and you have clicked " + counts + " times");
-            }
+            	@Override
+            	public void handle(long now) {
+            		if (now > timeStep)
+            		{
+            			System.out.println("You clicked " + counts + " times in 10 seconds");
+            			System.exit(1);
+            		}
+            	}
+            }.start();
          });
-        
-        
-        PrintWriter pw = null;
-        try 
-        {
-        	pw = new PrintWriter(new File("results.csv"));
-        }
-        catch(FileNotFoundException e)
-        {
-        	System.err.println(e);
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name, High Score\n");
-        sb.append("Tim,counts\n");
+  
+        button.setMaxSize(100, 100);
         
         StackPane root = new StackPane();
         root.getChildren().add(button);
+        root.getChildren().add(text1);
         Scene scene = new Scene(root, 500, 500);
         primaryStage.setScene(scene);
         primaryStage.show();		
