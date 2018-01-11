@@ -4,6 +4,8 @@ import javafx.application.Application;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Timer;
 import javafx.animation.AnimationTimer;
@@ -43,6 +45,12 @@ public class GameCode extends Application{
             }.start();
             
             PrintWriter pw = null;
+            try {
+				FileWriter fw = new FileWriter("results.csv");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
             try 
             {
             	pw = new PrintWriter(new File("results.csv"));
@@ -53,7 +61,7 @@ public class GameCode extends Application{
             }
             StringBuilder sb = new StringBuilder();
             sb.append("Name, High Score\n");
-            sb.append("Tim," + counts + "\n");
+            sb.append("Tim, 80\n");
             
          });
   
