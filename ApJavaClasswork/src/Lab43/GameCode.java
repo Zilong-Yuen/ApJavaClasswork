@@ -2,6 +2,7 @@ package Lab43;
 
 import javafx.application.Application;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -43,25 +44,25 @@ public class GameCode extends Application{
             		}
             	}
             }.start();
-            
+           
             PrintWriter pw = null;
-            try {
-				FileWriter fw = new FileWriter("results.csv");
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-            try 
+            try
             {
             	pw = new PrintWriter(new File("results.csv"));
             }
             catch(FileNotFoundException e)
             {
-            	System.err.println(e);
+            	e.printStackTrace();
             }
             StringBuilder sb = new StringBuilder();
             sb.append("Name, High Score\n");
-            sb.append("Tim, 80\n");
+            sb.append("Tim");
+            sb.append(',');
+            sb.append(counts);
+            sb.append('\n');
+            
+            pw.write(sb.toString());
+            pw.close();
             
          });
   
@@ -79,9 +80,7 @@ public class GameCode extends Application{
     }
 	
     public static void main(String[] args) {
-        Application.launch(args);
-        
-       
+        Application.launch(args);    
     }
 
 }
